@@ -6,7 +6,7 @@ export default function Team() {
     {
       name: "Dr. Archana Chaudhari",
       role: "Faculty Advisor",
-      bio: "",
+      bio: "Physics major specialized in quantum entanglement. Passionate about quantum communication protocols and quantum networking.",
       icon: (
         <svg className="w-10 h-10 text-blue-400" viewBox="0 0 24 24" fill="none">
           <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="2"/>
@@ -17,7 +17,18 @@ export default function Team() {
     {
       name: "Samarth Bhadane",
       role: "President",
-      bio: "",
+      bio: "Physics major specialized in quantum entanglement. Passionate about quantum communication protocols and quantum networking.",
+      icon: (
+        <svg className="w-10 h-10 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+        </svg>
+      )
+    },
+
+    {
+      name: "Nandini Patawri",
+      role: "Vice President",
+      bio: "Physics major specialized in quantum entanglement. Passionate about quantum communication protocols and quantum networking.",
       icon: (
         <svg className="w-10 h-10 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
@@ -26,7 +37,7 @@ export default function Team() {
     },
     {
       name: "Eric Siquiera",
-      role: "Technical Lead",
+      role: "Technical Head",
       bio: "Physics major specialized in quantum entanglement. Passionate about quantum communication protocols and quantum networking.",
       icon: (
         <svg className="w-10 h-10 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -36,7 +47,7 @@ export default function Team() {
     },
     {
       name: "Disha Gupta",
-      role: "Technical Lead",
+      role: "Technical Co-Head",
       bio: "Physics major specialized in quantum entanglement. Passionate about quantum communication protocols and quantum networking.",
       icon: (
         <svg className="w-10 h-10 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -77,10 +88,10 @@ export default function Team() {
   ];
 
   return (
-    <div className="py-20">
+    <div className="py-20 container mx-auto px-4">
       <SectionHeading title="Our Team" />
       
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 justify-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 place-items-center">
         {teamMembers.map((member, i) => (
           <TeamCard key={i} {...member} />
         ))}

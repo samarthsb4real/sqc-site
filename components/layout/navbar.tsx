@@ -26,7 +26,6 @@ export default function Navbar() {
   
   const navItems = [
     { name: "ChatBot", href: "/chatbot" },
-    { name: "Home", href: "/" },
     { name: "Team", href: "/team" },
     { name: "Mission", href: "/mission" },
     { name: "Contact", href: "/contact" },

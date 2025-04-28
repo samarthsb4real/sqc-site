@@ -9,60 +9,38 @@ export default function ChatbotPage() {
   const [message, setMessage] = useState("");
   const [isTyping, setIsTyping] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
-  const chatContainerRef = useRef<HTMLDivElement>(null);
   const [chatHistory, setChatHistory] = useState<{role: string, content: string}[]>([
     {role: "bot", content: "👋 Hello! I'm QuantBot, your quantum computing assistant. How can I help you today?"},
     {role: "bot", content: "You can ask me questions about quantum computing, our club events, or how to get involved!"}
   ]);
 
-  // Fix issue with container height calculation
-  useEffect(() => {
-    function updateHeight() {
-      if (chatContainerRef.current) {
-        const vh = window.innerHeight * 0.01;
-        document.documentElement.style.setProperty('--vh', `${vh}px`);
-      }
-    }
-    
-    window.addEventListener('resize', updateHeight);
-    updateHeight();
-    
-    return () => window.removeEventListener('resize', updateHeight);
-  }, []);
-
-  const handleSend = async () => {
+  const handleSend = () => {
     if (!message.trim()) return;
     
     // Add user message to chat
-    const userMessage = message.trim();
-    const updatedHistory = [...chatHistory, {role: "user", content: userMessage}];
-    setChatHistory(updatedHistory);
+    setChatHistory([...chatHistory, {role: "user", content: message}]);
     setMessage("");
     setIsTyping(true);
     
-    try {
-      // Send request to our API route
-      const response = await fetch('/api/chat', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ 
-          messages: updatedHistory
-        }),
-      });
+    // Simulate bot response with typing indicator
+    setTimeout(() => {
+      let response = "I'm still learning about quantum computing. Can you ask something else?";
       
-      const data = await response.json();
-      setChatHistory(prev => [...prev, {role: "bot", content: data.response}]);
-    } catch (error) {
-      console.error('Error calling chat API:', error);
-      setChatHistory(prev => [
-        ...prev, 
-        {role: "bot", content: "I'm sorry, I encountered an error. Please try again later."}
-      ]);
-    } finally {
+      // Simple response logic
+      const lowerMsg = message.toLowerCase();
+      if (lowerMsg.includes("quantum")) {
+        response = "Quantum computing harnesses quantum mechanics to perform computations that classical computers cannot efficiently do. This includes quantum superposition, entanglement, and interference to process information in fundamentally different ways.";
+      } else if (lowerMsg.includes("club") || lowerMsg.includes("symbiosis")) {
+        response = "Symbiosis Quantum Club was founded in 2023 to explore quantum computing and related technologies. We host regular workshops, guest lectures, and hands-on projects for students interested in this emerging field.";
+      } else if (lowerMsg.includes("join") || lowerMsg.includes("member")) {
+        response = "Great to hear you're interested in joining! You can become a member by attending our next introductory session or by emailing quantum@symbiosis.edu with your details. No prior quantum knowledge is required – just curiosity!";
+      } else if (lowerMsg.includes("event") || lowerMsg.includes("workshop")) {
+        response = "Our next event is a Qiskit workshop on quantum algorithms, scheduled for May 15, 2025. Check our events page for more details and registration information.";
+      }
+      
+      setChatHistory(prev => [...prev, {role: "bot", content: response}]);
       setIsTyping(false);
-    }
+    }, 1500);
   };
 
   const handleSuggestionClick = (suggestion: string) => {
@@ -80,7 +58,7 @@ export default function ChatbotPage() {
   ];
 
   return (
-    <div className="container mx-auto py-4 px-4">
+    <div className="container mx-auto py-8 px-4">
       <div className="flex flex-col lg:flex-row gap-6">
         {/* Sidebar */}
         <div className="lg:w-1/3">
@@ -149,8 +127,8 @@ export default function ChatbotPage() {
         
         {/* Main Chat Area */}
         <div className="lg:w-2/3">
-          <Card className="bg-[#060a20] border-gray-800 flex flex-col h-[calc(var(--vh,1vh)*70)]">
-            <div className="flex items-center p-3 border-b border-gray-800 bg-gradient-to-r from-blue-900/20 to-transparent flex-shrink-0">
+          <Card className="bg-[#060a20] border-gray-800">
+            <div className="flex items-center p-3 border-b border-gray-800 bg-gradient-to-r from-blue-900/20 to-transparent">
               <div className="h-8 w-8 bg-blue-900/80 rounded-full flex items-center justify-center mr-3">
                 <span className="text-xs font-bold font-title text-white">QB</span>
               </div>
@@ -177,11 +155,7 @@ export default function ChatbotPage() {
               </button>
             </div>
             
-            <div 
-              ref={chatContainerRef} 
-              className="flex-grow overflow-y-auto custom-scrollbar p-6 bg-gradient-to-b from-[#060a20] to-[#0a0f2a] space-y-4"
-              style={{ overscrollBehavior: 'contain' }}
-            >
+            <div className="h-[60vh] overflow-y-auto p-6 bg-gradient-to-b from-[#060a20] to-[#0a0f2a] space-y-4">
               {chatHistory.map((msg, i) => (
                 <div 
                   key={i}
@@ -197,7 +171,7 @@ export default function ChatbotPage() {
                       ? "bg-blue-800/80 text-white" 
                       : "bg-gray-800/80 text-gray-100"
                   }`}>
-                    <p className="font-display text-sm whitespace-pre-wrap">{msg.content}</p>
+                    <p className="font-display text-sm">{msg.content}</p>
                   </div>
                   {msg.role === "user" && (
                     <div className="h-6 w-6 bg-gray-700/80 rounded-full flex-shrink-0 flex items-center justify-center ml-2 mt-1">
@@ -225,7 +199,7 @@ export default function ChatbotPage() {
               <div ref={messagesEndRef} />
             </div>
             
-            <div className="p-4 border-t border-gray-800 flex-shrink-0">
+            <div className="p-4 border-t border-gray-800">
               <form 
                 className="flex items-center gap-2" 
                 onSubmit={(e) => {

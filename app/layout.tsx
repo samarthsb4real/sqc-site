@@ -24,7 +24,6 @@ export default function RootLayout({
         <QuantumBackground />
         <Navbar />
         <main className="container mx-auto px-4">{children}</main>
-        <ChatBot />
         <Footer />
       </body>
     </html>

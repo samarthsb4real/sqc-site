@@ -24,16 +24,16 @@ export default function HeroSection() {
             </span>
           </h1>
           
-          <p className="font-display text-xl md:text-2xl mb-8 text-gray-300 max-w-2xl leading-relaxed">
+          <p className="font-display text-md md:text-2xl mb-8 text-gray-300 max-w-2xl leading-relaxed">
             Exploring the quantum realm, one qubit at a time. Join us in pushing the boundaries of computation.
           </p>
           
           <div className="flex flex-wrap gap-4">
-            <Button asChild className="bg-blue-600 hover:bg-blue-500 text-white font-display text-lg px-8 py-6 h-auto rounded-md shadow-lg shadow-blue-900/20">
+            <Button asChild className="bg-blue-600 hover:bg-blue-900 text-white font-display text-sm md:text-lg px-8 py-6 h-auto rounded-md shadow-lg shadow-blue-900/20">
               <Link href="/join">Join Us</Link>
             </Button>
             
-            <Button asChild variant="outline" className="border-blue-700/50 text-blue-300 hover:bg-blue-900/30 font-display text-lg px-8 py-6 h-auto rounded-md">
+            <Button asChild variant="outline" className="border-blue-700/50 text-blue-300 hover:bg-blue-900/30 font-display text-sm md:text-lg px-8 py-6 h-auto rounded-md">
               <Link href="/about">Learn More</Link>
             </Button>
           </div>

@@ -13,19 +13,19 @@ interface TeamMemberProps {
   compact?: boolean;
 }
 
-export default function TeamCard({ name, role, bio, icon }: TeamMemberProps) {
+export default function TeamCard({ name, role, bio, icon, compact = false }: TeamMemberProps) {
   return (
     <HoverCard>
       <HoverCardTrigger asChild>
         <Card className="bg-[#060a20] border-gray-800 hover:border-blue-900/50 transition-all duration-300 hover:translate-y-[-2px]">
-          <CardContent className="p-6 text-center">
-            <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-blue-900/20 border border-blue-900/30 flex items-center justify-center">
+          <CardContent className={`${compact ? 'p-4' : 'p-6'} text-center`}>
+            <div className={`${compact ? 'w-14 h-14' : 'w-20 h-20'} mx-auto mb-3 rounded-full bg-blue-900/20 border border-blue-900/30 flex items-center justify-center`}>
               {icon}
             </div>
-            <h3 className="font-title text-xl font-medium text-white">{name}</h3>
+            <h3 className={`font-title ${compact ? 'text-base' : 'text-xl'} font-medium text-white`}>{name}</h3>
             <p className="text-blue-400 mb-2 font-display">{role}</p>
             {bio && (
-              <p className="text-sm font-display text-gray-400 line-clamp-2">{bio}</p>
+              <p className={`${compact ? 'text-xs' : 'text-sm'} font-display text-gray-400 line-clamp-2`}>{bio}</p>
             )}
           </CardContent>
         </Card>

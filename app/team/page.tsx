@@ -1,12 +1,24 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import SectionHeading from "@/components/ui/section-heading";
 import TeamCard from "@/components/sections/team-card";
 
-
 export default function Team() {
   const [activeFilter, setActiveFilter] = useState("All");
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Handle responsive detection on the client side only
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const teamMembers = [
     {
@@ -155,10 +167,10 @@ export default function Team() {
       </div>
       
       {/* Team Grid - Maintaining grid for all devices */}
-      <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-2 sm:gap-4 md:gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-2 sm:gap-4 md:gap-6">
         {filteredMembers.map((member, i) => (
           <div key={i} className="w-full flex justify-center">
-            <TeamCard {...member} compact={window.innerWidth < 640} />
+            <TeamCard {...member} compact={isMobile} />
           </div>
         ))}
       </div>

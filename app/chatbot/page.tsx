@@ -15,11 +15,6 @@ export default function ChatbotPage() {
     {role: "bot", content: "You can ask me questions about quantum computing, our club events, or how to get involved!"}
   ]);
 
-  useEffect(() => {
-    // Scroll to bottom whenever messages change
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [chatHistory, isTyping]);
-
   // Reset sidebar visibility when switching to desktop
   useEffect(() => {
     const handleResize = () => {

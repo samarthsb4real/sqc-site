@@ -10,6 +10,7 @@ interface TeamMemberProps {
   role: string;
   bio: string;
   icon: React.ReactNode;
+  compact?: boolean;
 }
 
 export default function TeamCard({ name, role, bio, icon }: TeamMemberProps) {

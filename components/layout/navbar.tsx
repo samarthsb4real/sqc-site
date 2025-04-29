@@ -2,12 +2,12 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
   SheetClose,
   SheetContent,
-  SheetDescription,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
@@ -16,6 +16,7 @@ import {
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
   
   // Handle scroll effect
   useEffect(() => {
@@ -35,21 +36,25 @@ export default function Navbar() {
     <header className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${
       isScrolled ? "bg-[#030618]/90 backdrop-blur-sm border-b border-gray-800/50" : ""
     }`}>
-      <div className="container mx-auto px-4 h-16 flex items-center justify-between">
+      <div className="container mx-auto px-3 h-14 sm:h-16 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
           <div className="h-8 w-8 bg-blue-900/80 rounded-full flex items-center justify-center">
             <span className="text-sm font-bold font-title text-white">SQ</span>
           </div>
-          <span className="font-title font-medium text-lg">Symbiosis Quantum Club</span>
+          <span className="font-title font-medium text-base xs:text-lg truncate max-w-[140px] sm:max-w-none">
+            <span className="hidden sm:inline">Symbiosis Quantum Club</span>
+          </span>
         </Link>
         
         {/* Desktop navigation */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-6 lg:gap-8">
           {navItems.map((item) => (
             <Link 
               key={item.name}
               href={item.href}
-              className="text-sm font-display text-gray-300 hover:text-white transition-colors"
+              className={`text-sm font-display transition-colors ${
+                pathname === item.href ? "text-white font-medium" : "text-gray-300 hover:text-white"
+              }`}
             >
               {item.name}
             </Link>
@@ -60,11 +65,11 @@ export default function Navbar() {
         {/* Mobile navigation */}
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild className="md:hidden">
-            <Button variant="ghost" size="sm" className="text-gray-200">
+            <Button variant="ghost" size="sm" className="text-gray-200 h-10 w-10 p-0">
               <svg 
                 xmlns="http://www.w3.org/2000/svg" 
-                width="24" 
-                height="24" 
+                width="22" 
+                height="22" 
                 viewBox="0 0 24 24" 
                 fill="none" 
                 stroke="currentColor" 
@@ -79,28 +84,26 @@ export default function Navbar() {
               <span className="sr-only">Open menu</span>
             </Button>
           </SheetTrigger>
-          <SheetContent side="right" className="w-[240px] bg-[#030618]/95 border-gray-800">
-            <SheetHeader>
-              <SheetTitle>Navigation</SheetTitle>
-              <SheetDescription className="text-gray-400">
-                Access all site sections
-              </SheetDescription>
+          <SheetContent side="right" className="w-[80%] max-w-[280px] bg-[#030618]/95 border-gray-800">
+            <SheetHeader className="pb-2 border-b border-gray-800/50">
+              <SheetTitle className="text-white">Menu</SheetTitle>
             </SheetHeader>
-            <nav className="flex flex-col gap-4 mt-8">
+            <nav className="flex flex-col mt-1 gap-2 p-2">
               {navItems.map((item) => (
                 <SheetClose asChild key={item.name}>
                   <Link
                     href={item.href}
-                    className="px-2 py-1 text-gray-300 hover:text-white transition-colors"
-                  >
-                    {item.name}
+                    className={`py-1 px-4 text-base hover:text-gray-300 ${
+                      pathname === item.href 
+                        ? "text-white font-medium border-l-2 border-blue-500" 
+                        : "text-gray-300"
+                    }`}
+                  ><SheetTitle className="text-gray-300 hover:text-gray-800">{item.name}</SheetTitle>
+                    
                   </Link>
                 </SheetClose>
               ))}
               <SheetClose asChild>
-                <Button variant="outline" className="mt-4 text-white border-blue-400/30 hover:bg-blue-950">
-                  Join Us
-                </Button>
               </SheetClose>
             </nav>
           </SheetContent>

@@ -56,8 +56,8 @@ export default function Team() {
       )
     },
     {
-      name: "Circuit Designer",
-      role: "Workshop Coordinator",
+      name: "Mahi Laddha",
+      role: "Media Head",
       bio: "Electrical Engineering student focused on quantum circuit design. Organizes hands-on workshops for club members.",
       icon: (
         <svg className="w-10 h-10 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -66,8 +66,8 @@ export default function Team() {
       )
     },
     {
-      name: "Quantum Programmer",
-      role: "Content Creator",
+      name: "Khushi Kashyap",
+      role: "Event Head",
       bio: "Math and CS double major. Creates educational content about quantum programming and manages the club's online resources.",
       icon: (
         <svg className="w-10 h-10 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -76,8 +76,8 @@ export default function Team() {
       )
     },
     {
-      name: "Quantum Enthusiast",
-      role: "Events Coordinator",
+      name: "Manya Bhargava",
+      role: "Documentation Head",
       bio: "Physics student with a passion for quantum outreach. Coordinates guest lectures, networking events, and hackathons.",
       icon: (
         <svg className="w-10 h-10 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -84,7 +84,7 @@ export default function Home() {
             Connect with fellow quantum enthusiasts, participate in events, and stay updated with the latest developments.
           </p>
           <Button className="bg-blue-600 hover:bg-blue-700 font-display px-8 py-6 h-auto text-lg">
-            Join Discord
+            Join Now
           </Button>
         </div>
       </section>

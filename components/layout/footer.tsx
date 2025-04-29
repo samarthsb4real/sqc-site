@@ -7,7 +7,7 @@ export default function Footer() {
             <div className="h-6 w-6 bg-blue-900/80 rounded-full flex items-center justify-center">
               <span className="text-xs font-bold font-title text-white">SQ</span>
             </div>
-            <span className="font-display text-xs text-gray-400">© {new Date().getFullYear()} Symbiosis Quantum Club</span>
+            <span className="font-display text-xs text-gray-400">Symbiosis Quantum Club</span>
           </div>
           
           <div className="flex items-center gap-4">

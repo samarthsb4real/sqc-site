@@ -1,12 +1,12 @@
+import Image from "next/image";
+
 export default function Footer() {
   return (
     <footer className="border-t border-gray-800/50 py-4 mt-20">
       <div className="justify-between container mx-auto px-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="h-6 w-6 bg-blue-900/80 rounded-full flex items-center justify-center">
-              <span className="text-xs font-bold font-title text-white">SQ</span>
-            </div>
+          <Image src='/logo-mono.svg' width={50} height={50} alt=""/>
             <span className="font-display text-xs text-gray-400">Symbiosis Quantum Club</span>
           </div>
           

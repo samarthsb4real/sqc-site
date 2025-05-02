@@ -12,6 +12,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import Image from "next/image";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -36,12 +37,10 @@ export default function Navbar() {
     <header className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${
       isScrolled ? "bg-[#030618]/90 backdrop-blur-sm border-b border-gray-800/50" : ""
     }`}>
-      <div className="container mx-auto px-3 h-14 sm:h-16 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2">
-          <div className="h-8 w-8 bg-blue-900/80 rounded-full flex items-center justify-center">
-            <span className="text-sm font-bold font-title text-white">SQ</span>
-          </div>
-          <span className="font-title font-medium text-base xs:text-lg truncate max-w-[140px] sm:max-w-none">
+      <div className="container mx-auto px-1 h-14 sm:h-16 flex items-center justify-between">
+        <Link href="/" className="flex items-center">
+          <Image src='/logo.svg' width={70} height={70} alt=""/>
+          <span className="font-title font-medium text-base xs:text-lg truncate max-w-[100px] sm:max-w-none">
             <span className="hidden sm:inline">Symbiosis Quantum Club</span>
           </span>
         </Link>

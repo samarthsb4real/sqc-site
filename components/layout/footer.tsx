@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
           <Image src='/logo-mono.svg' width={50} height={50} alt=""/>
-            <span className="font-display text-xs text-gray-400">Symbiosis Quantum Club</span>
+            <span className="font-display text-sm text-gray-400">Symbiosis Quantum Club</span>
           </div>
           
           <div className="flex items-center gap-4">

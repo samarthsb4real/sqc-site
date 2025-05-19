@@ -53,7 +53,7 @@ export default function Home() {
                   <span className="w-8 h-8 rounded-full bg-blue-600/30 flex items-center justify-center mr-3">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                       <path d="M12 12v6m-3-3h6" />
-                      <path d="M5 12v-2a7 7 0 0 1 14 0v2" />
+                      <path d="M5 12v-2a7 7 0 0 1 14 0v2"/>
                       <path d="M12 12a7 7 0 0 1-7-7v7a7 7 0 0 0 7 7 7 7 0 0 0 7-7v-7a7 7 0 0 1-7 7z" />
                     </svg>
                   </span>

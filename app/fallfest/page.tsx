@@ -214,9 +214,7 @@ function HomeHero() {
                 <ul className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.9 mb-10">
                     {[
                         "Fundamentals of Quantum Mechanics",
-                        "Live 3‑Day Online Program",
                         "Assessment for Certification",
-                        "November 2025",
                         "Open to Everyone",
                     ].map((item, i) => (
                         <li

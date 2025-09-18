@@ -268,7 +268,7 @@ function EventSection() {
                         </ul>
                         <div className="pt-2">
                             <Button asChild size="lg" className={ctaPrimary}>
-                                <a href="#register" aria-label="Open registration">Register (Open)</a>
+                                <a href="https://forms.gle/UFqw5sEjZm5u9gGx5" aria-label="Open registration">Register (Open)</a>
                             </Button>
                         </div>
                     </div>
@@ -491,7 +491,7 @@ function OrganizersSection() {
         {name: "Samarth Bhadane", role: "Club Head", img: "/assets/Team/Samarth.png", email: "samarth.bhadane.btech2023@sitpune.edu.in"},
         {name: "Anirudh Raman", role: "Research Head", img: "/assets/Team/Anirudh.png", email: "ganapathy.anirudh.btech2023@sitpune.edu.in"},
         {name: "Eric Siquiera", role: "Technical Head", img: "/assets/Team/Eric.png", email: "eric.siqueira.btech2023@sitpune.edu.in"},
-        {name: "Disha Gupta", role: "Technical Head", img: "/assets/Team/placeholder.png", email: "disha.gupta.btech2023@sitpune.edu.in"},
+        {name: "Disha Gupta", role: "Technical Head", img: "/assets/Team/Disha.png", email: "disha.gupta.btech2023@sitpune.edu.in"},
     ];
 
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);

@@ -1,11 +1,17 @@
+"use client";
+
+import FadeInOnScroll from "@/components/sections/FadeInOnScroll";
 import HeroSection from "@/components/sections/hero-section";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import SectionHeading from "@/components/ui/section-heading";
+// import { Card, CardBody } from "@/components/ui/card";
+import { Card, CardBody } from "@heroui/react";
 import Link from "next/link";
 
 export default function Home() {
   return (
     <>
+
       <HeroSection />
 
       {/* About Section Preview */}
@@ -15,8 +21,9 @@ export default function Home() {
           <div className="w-10 md:w-16 h-1 bg-blue-600 mx-auto"></div>
         </div>
         
-        <Card className="bg-[#060a20] border-gray-800 shadow-lg">
-          <CardContent className="p-5 sm:p-8 md:p-10">
+        <FadeInOnScroll className="snap-center min-w-[80vw] sm:min-w-[280px]">
+<Card className="bg-[#060A2C] border-gray-800 shadow-lg">
+          <CardBody className="p-5 sm:p-8 md:p-10">
             <p className="mb-5 md:mb-6 text-sm sm:text-base md:text-lg font-display text-gray-300 leading-relaxed">
               <span className="md:hidden">
                 Symbiosis Quantum Club explores quantum computing, bringing together students from diverse backgrounds with a shared interest in quantum tech.
@@ -33,8 +40,9 @@ export default function Home() {
                 <Link href="/about">Learn More</Link>
               </Button>
             </div>
-          </CardContent>
+          </CardBody>
         </Card>
+</FadeInOnScroll>
       </section>
 
       {/* Featured Content */}
@@ -47,8 +55,9 @@ export default function Home() {
         {/* Mobile Horizontal Scroll Layout */}
         <div className="md:hidden -mx-4 px-4 overflow-x-auto no-scrollbar pb-4">
           <div className="flex gap-4 py-8 md:py-16 container mx-auto px-4 sm:px-6">
-            <Card className="bg-[#060a20] border-gray-800 hover:border-blue-900/50 transition-all shadow-md min-w-[80vw] sm:min-w-[280px]">
-              <CardContent className="p-4">
+            <FadeInOnScroll className="snap-center min-w-[80vw] sm:min-w-[280px]">
+<Card className="bg-[#060A2C] border-gray-800 hover:border-blue-900/50 transition-all shadow-md min-w-[80vw] sm:min-w-[280px]">
+              <CardBody className="p-4">
                 <div className="flex items-center mb-3">
                   <span className="w-8 h-8 rounded-full bg-blue-600/30 flex items-center justify-center mr-3">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -63,11 +72,13 @@ export default function Home() {
                 <Button variant="link" className="text-blue-400 p-0 font-display text-sm">
                   View Schedule →
                 </Button>
-              </CardContent>
+              </CardBody>
             </Card>
+</FadeInOnScroll>
             
-            <Card className="bg-[#060a20] border-gray-800 hover:border-blue-900/50 transition-all shadow-md min-w-[80vw] sm:min-w-[280px]">
-              <CardContent className="p-4">
+            <FadeInOnScroll className="snap-center min-w-[80vw] sm:min-w-[280px]">
+<Card className="bg-[#060A2C] border-gray-800 hover:border-blue-900/50 transition-all shadow-md min-w-[80vw] sm:min-w-[280px]">
+              <CardBody className="p-4">
                 <div className="flex items-center mb-3">
                   <span className="w-8 h-8 rounded-full bg-purple-600/30 flex items-center justify-center mr-3">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -80,11 +91,13 @@ export default function Home() {
                 <Button variant="link" className="text-blue-400 p-0 font-display text-sm">
                   Browse Library →
                 </Button>
-              </CardContent>
+              </CardBody>
             </Card>
+</FadeInOnScroll>
             
-            <Card className="bg-[#060a20] border-gray-800 hover:border-blue-900/50 transition-all shadow-md min-w-[80vw] sm:min-w-[280px]">
-              <CardContent className="p-4">
+            <FadeInOnScroll className="snap-center min-w-[80vw] sm:min-w-[280px]">
+<Card className="bg-[#060A2C] border-gray-800 hover:border-blue-900/50 transition-all shadow-md min-w-[80vw] sm:min-w-[280px]">
+              <CardBody className="p-4">
                 <div className="flex items-center mb-3">
                   <span className="w-8 h-8 rounded-full bg-green-600/30 flex items-center justify-center mr-3">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -97,61 +110,76 @@ export default function Home() {
                 <Button variant="link" className="text-blue-400 p-0 font-display text-sm">
                   See Projects →
                 </Button>
-              </CardContent>
+              </CardBody>
             </Card>
+</FadeInOnScroll>
           </div>
         </div>
 
         {/* Desktop Grid Layout */}
         <div className="hidden md:grid md:grid-cols-3 gap-6">
-          <Card className="bg-[#060a20] border-gray-800 hover:border-blue-900/50 transition-all duration-300 shadow-md">
-            <CardContent className="p-8">
+          <FadeInOnScroll className="snap-center min-w-[80vw] sm:min-w-[280px]">
+<Card className="bg-[#060A2C] border-gray-800 hover:border-blue-900/50 transition-all duration-300 shadow-md">
+            <CardBody className="p-8">
               <h3 className="font-title text-xl font-semibold mb-3">Workshops</h3>
               <p className="font-display text-gray-300 mb-6 text-base leading-relaxed">Join our hands-on workshops to learn quantum programming</p>
               <Button variant="link" className="text-blue-400 p-0 font-display text-base">
                 View Schedule →
               </Button>
-            </CardContent>
+            </CardBody>
           </Card>
+</FadeInOnScroll>
           
-          <Card className="bg-[#060a20] border-gray-800 hover:border-blue-900/50 transition-all duration-300 shadow-md">
-            <CardContent className="p-8">
+          <FadeInOnScroll className="snap-center min-w-[80vw] sm:min-w-[280px]">
+<Card className="bg-[#060A2C] border-gray-800 hover:border-blue-900/50 transition-all duration-300 shadow-md">
+            <CardBody className="p-8">
               <h3 className="font-title text-xl font-semibold mb-3">Resources</h3>
               <p className="font-display text-gray-300 mb-6 text-base leading-relaxed">Access our curated collection of quantum resources</p>
               <Button variant="link" className="text-blue-400 p-0 font-display text-base">
                 Browse Library →
               </Button>
-            </CardContent>
+            </CardBody>
           </Card>
+</FadeInOnScroll>
           
-          <Card className="bg-[#060a20] border-gray-800 hover:border-blue-900/50 transition-all duration-300 shadow-md">
-            <CardContent className="p-8">
+          <FadeInOnScroll className="snap-center min-w-[80vw] sm:min-w-[280px]">
+<Card className="bg-[#060A2C] border-gray-800 hover:border-blue-900/50 transition-all duration-300 shadow-md">
+            <CardBody className="p-8">
               <h3 className="font-title text-xl font-semibold mb-3">Projects</h3>
               <p className="font-display text-gray-300 mb-6 text-base leading-relaxed">Explore our ongoing quantum research projects</p>
               <Button variant="link" className="text-blue-400 p-0 font-display text-base">
                 See Projects →
               </Button>
-            </CardContent>
+            </CardBody>
           </Card>
+</FadeInOnScroll>
         </div>
-      </section>
+</section>
 
       {/* Community Section */}
-      <section className="py-8 md:py-16 container mx-auto px-4 sm:px-6 mb-4 md:mb-0">
-        <div className="text-center mb-5 md:mb-10">
-          <h2 className="font-title text-2xl sm:text-3xl md:text-4xl font-bold mb-2 md:mb-3">Join Our Community</h2>
-          <div className="w-10 md:w-16 h-1 bg-blue-600 mx-auto"></div>
-        </div>
+      <FadeInOnScroll className="snap-center min-w-[80vw] sm:min-w-[280px]">
+<Card className="py-8 md:py-16 container mx-auto px-4 sm:px-6 mb-4 md:mb-0">
         
-        <div className="bg-[#060a20] border border-gray-800 rounded-xl p-5 sm:p-8 md:p-12 text-center shadow-lg">
+        <SectionHeading title="Join Our Community" className="mb-8 md:mb-12" />        
+        <CardBody className="bg-[#060A2C] rounded-xl p-5 sm:p-8 md:p-12 text-center shadow-lg">
           <p className="font-display text-sm sm:text-base md:text-xl mb-5 md:mb-6 max-w-2xl mx-auto text-gray-300">
             Connect with fellow quantum enthusiasts, participate in events, and stay updated.
           </p>
-          <Button className="bg-blue-600 hover:bg-blue-700 font-display w-full sm:w-auto px-5 py-2.5 sm:px-8 sm:py-4 h-auto text-sm sm:text-base">
+          <Button className="bg-blue-600 hover:bg-blue-700 font-display mx-120 px-2 py-2.5 sm:px-8 sm:py-4 h-auto text-sm sm:text-base">
             Join Now
           </Button>
-        </div>
-      </section>
+        </CardBody>
+      </Card>
+</FadeInOnScroll>
+
+<style jsx global>{`
+  .scroll-snap-x-mandatory {
+    scroll-snap-type: x mandatory;
+  }
+  .snap-center {
+    scroll-snap-align: center;
+  }
+`}</style>
     </>
   );
 }

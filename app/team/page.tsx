@@ -8,7 +8,6 @@ export default function Team() {
   const [activeFilter, setActiveFilter] = useState("All");
   const [isMobile, setIsMobile] = useState(false);
 
-  // Handle responsive detection on the client side only
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 640);
@@ -128,23 +127,21 @@ export default function Team() {
         Meet the passionate individuals driving quantum innovation at Symbiosis. Our diverse team brings expertise from various fields to promote quantum computing education and research.
       </p>
       
-      {/* Mobile Filter - Horizontal Scrolling Pills */}
-      <div className="mb-5 md:hidden overflow-x-auto no-scrollbar">
-        <div className="flex gap-2 pb-1 w-max px-0.5">
-          {categories.map(category => (
-            <button
-              key={category}
-              onClick={() => setActiveFilter(category)}
-              className={`py-1 px-3 rounded-full text-xs font-medium whitespace-nowrap transition-colors ${
-                activeFilter === category
-                  ? "bg-blue-600 text-white"
-                  : "bg-[#060a20] border border-gray-800 text-gray-300"
-              }`}
-            >
-              {category}
-            </button>
-          ))}
-        </div>
+      {/* Mobile Filter - Pills Wrap to Next Line */}
+      <div className="flex flex-wrap gap-2 mb-5 md:hidden w-full">
+        {categories.map(category => (
+          <button
+            key={category}
+            onClick={() => setActiveFilter(category)}
+            className={`py-1 px-3 rounded-full text-xs font-medium transition-colors ${
+              activeFilter === category
+                ? "bg-blue-600 text-white"
+                : "bg-[#060a20] border border-gray-800 text-gray-300"
+            }`}
+          >
+            {category}
+          </button>
+        ))}
       </div>
       
       {/* Desktop Filter - Standard Tabs */}

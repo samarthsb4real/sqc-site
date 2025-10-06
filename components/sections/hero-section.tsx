@@ -1,10 +1,41 @@
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 export default function HeroSection() {
+
+  const [showScrollHint, setShowScrollHint] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollHint(window.scrollY < 200);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <section className="relative min-h-[90vh] flex flex-col items-center justify-center px-4 overflow-hidden">
-      {/* Orbital animation element (simpler alternative to Three.js) */}
+                <style>
+        {`
+          @keyframes gradient-move {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 200% 50%; }
+          }
+          .gradient-text {
+            background: linear-gradient(270deg, 52A1FF, #7c3aed, #7c3aed, #52A1FF 90%);
+            background-size: 400% 400%;
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            animation: gradient-move 3.5s linear infinite;
+          }
+        `}
+      </style>
+      {/* Orbital animation element */}
       <div className="absolute opacity-10 pointer-events-none">
         <div className="absolute w-[60rem] h-[60rem] rounded-full border border-blue-500/20 animate-[spin_60s_linear_infinite]"></div>
         <div className="absolute w-[40rem] h-[40rem] rounded-full border border-indigo-500/20 animate-[spin_40s_linear_infinite_reverse]"></div>
@@ -19,7 +50,8 @@ export default function HeroSection() {
           </div>
           
           <h1 className="font-title text-5xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tight leading-[1.1] max-w-4xl">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-500">
+            {/* WORK IN PROG */}
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-500 gradient-text">
               Symbiosis Quantum Club
             </span>
           </h1>
@@ -41,14 +73,16 @@ export default function HeroSection() {
       </div>
       
       {/* Optional: Decorative element */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 hidden md:block">
-        <div className="flex flex-col items-center animate-bounce">
-          <span className="text-sm font-display text-gray-400 mb-2">Scroll to explore</span>
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
+      {showScrollHint && (
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 hidden md:block">
+          <div className="flex flex-col items-center animate-bounce">
+            <span className="text-sm font-display text-gray-400 mb-2">Scroll to explore</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </div>
         </div>
-      </div>
+      )}
     </section>
   );
 }

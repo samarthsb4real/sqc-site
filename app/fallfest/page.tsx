@@ -303,39 +303,32 @@ function ScheduleSection() {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
-                <Card className="bg-gray-900/90 border-l-4 border-[#40c0cb]">
+                <Card className="bg-gray-900/90 border-l-4 border-[#40c0cb] w-120">
                     <CardContent>
-                        <h3 className="text-lg sm:text-xl font-semibold text-[#40c0cb] mb-2">Day 1: Foundations</h3>
+                        <h3 className="text-lg sm:text-xl font-semibold text-[#40c0cb] mb-2">Day 1: Guest Lecture</h3>
                         <ul className="list-disc pl-5 text-gray-300 space-y-1">
-                            <li>State vectors, measurements, single‑qubit gates.</li>
-                            <li>Live demos in Qiskit to cement concepts.</li>
+                            <li>Guest talk by Ms.Kavita Yogaraj</li>
+                            <li>Interactive session on quantum application</li>
                         </ul>
                     </CardContent>
                 </Card>
-                <Card className="bg-gray-900/90 border-l-4 border-[#8b5cf6]">
+                <Card className="bg-gray-900/90 border-l-4 border-[#8b5cf6] w-120">
                     <CardContent>
-                        <h3 className="text-lg sm:text-xl font-semibold text-[#8b5cf6] mb-2">Day 2: Circuits</h3>
+                        <h3 className="text-lg sm:text-xl font-semibold text-[#8b5cf6] mb-2">Day 2: Hands-on Workshop</h3>
                         <ul className="list-disc pl-5 text-gray-300 space-y-1">
-                            <li>Multi‑qubit systems, entanglement.</li>
-                            <li>Compose and run simple circuits.</li>
+                            <li>Hands-on Qiskit workshops using real quantum devices</li>
+                            <li>Collaboration & networking with peers and experts</li>
                         </ul>
                     </CardContent>
                 </Card>
-                <Card className="bg-gray-900/90 border-l-4 border-[#fbbf24]">
-                    <CardContent>
-                        <h3 className="text-lg sm:text-xl font-semibold text-[#fbbf24] mb-2">Day 3: Algorithms</h3>
-                        <ul className="list-disc pl-5 text-gray-300 space-y-1">
-                            <li>Intro to basic algorithms.</li>
-                            <li>Guided practice + assessment briefing.</li>
-                        </ul>
-                    </CardContent>
-                </Card>
-                <Card className="bg-gray-900/90 border-l-4 border-[#ff4e50]">
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-1 gap-6 mt-8">
+                <Card className="bg-gray-900/90 border-l-4 border-[#ff4e50] w-120">
                     <CardContent>
                         <h3 className="text-lg sm:text-xl font-semibold text-[#ff4e50] mb-2">Assessment</h3>
                         <ul className="list-disc pl-5 text-gray-300 space-y-1">
                             <li>Submission checklist and timeline.</li>
-                            <li>Certification eligibility criteria.</li>
+                            <li>Certificates from IBM Quantum for all participants</li>
                         </ul>
                     </CardContent>
                 </Card>
@@ -348,7 +341,8 @@ function SpeakersSection() {
     const speakers = [
   {
     name: "Qiskit 101: Fundamentals of Quantum Mechanics",
-    role: "IBM Quantum (Speaker TBA)",
+    role: "Ms. Kavitha Yogaraj",
+    desc: "Senior Quantum Computational Scientist, IBM Quantum | Qiskit Advocate",
     img: "/assets/fallfest/Cat_01.png",
     bio: "An introduction to the core principles of quantum mechanics and their applications in quantum computing."
   },
@@ -375,7 +369,7 @@ function SpeakersSection() {
             className="relative flex flex-col items-center text-center px-6 py-12">
             <SectionHeading title="Speakers & Mentors"/>
             <div className="grid sm:grid-cols-3 gap-8">
-                {speakers.map(({name, role, img, bio}, i) => (
+                {speakers.map(({name, role, desc, img, bio}, i) => (
                     <Card
                         key={i}
                         className="bg-gray-900/80 p-6 flex flex-col items-center text-center rounded-lg hover:shadow-lg transition-shadow"
@@ -389,6 +383,7 @@ function SpeakersSection() {
                         />
                         <h3 className="text-white font-bold text-lg sm:text-xl">{name}</h3>
                         <span className="text-[#8b5cf6] font-semibold">{role}</span>
+                        <span className="text-[#8b5cf6] font-semibold text-sm">{desc}</span>
                         <p className="text-gray-300 mt-3">{bio}</p>
                     </Card>
                 ))}
@@ -411,7 +406,7 @@ function RegisterSection() {
                 <li>Eligible participants receive a course certificate.</li>
             </ul>
             <Button asChild variant="outline" size="lg" className={ctaSecondary}>
-                <a href="https://forms.gle/JxzaEsdJcm58wmmDA" target="_blank" rel="noopener noreferrer" aria-label="Register">Register Now</a>
+                <a href="https://forms.gle/xyTrvUHQbJjPywKDA" target="_blank" rel="noopener noreferrer" aria-label="Register">Register Now</a>
             </Button>
         </section>
     );

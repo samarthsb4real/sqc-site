@@ -382,7 +382,7 @@ function SpeakersSection() {
                             decoding="async"
                         />
                         <h3 className="text-white font-bold text-lg sm:text-xl">{name}</h3>
-                        <span className="text-[#8b5cf6] font-semibold">{role}</span>
+                        <span className="text-[#8b5cf6] font-semibold h-1">{role}</span>
                         <span className="text-[#8b5cf6] font-semibold text-sm">{desc}</span>
                         <p className="text-gray-300 mt-3">{bio}</p>
                     </Card>

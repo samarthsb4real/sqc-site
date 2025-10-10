@@ -303,19 +303,19 @@ function ScheduleSection() {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
-                <Card className="bg-gray-900/90 border-l-4 border-[#40c0cb] w-120">
+                <Card className="bg-gray-900/90 border-l-4 border-[#40c0cb] w-120 h-40">
                     <CardContent>
-                        <h3 className="text-lg sm:text-xl font-semibold text-[#40c0cb] mb-2">Day 1: Guest Lecture</h3>
-                        <ul className="list-disc pl-5 text-gray-300 space-y-1">
+                        <h3 className="text-lg sm:text-xl font-semibold text-[#40c0cb] mb-5">Day 1: Guest Lecture</h3>
+                        <ul className="list-disc pl-5 text-gray-300 space-y-2 text-left">
                             <li>Guest talk by Ms.Kavita Yogaraj</li>
                             <li>Interactive session on quantum application</li>
                         </ul>
                     </CardContent>
                 </Card>
-                <Card className="bg-gray-900/90 border-l-4 border-[#8b5cf6] w-120">
+                <Card className="bg-gray-900/90 border-l-4 border-[#8b5cf6] w-120 h-40">
                     <CardContent>
-                        <h3 className="text-lg sm:text-xl font-semibold text-[#8b5cf6] mb-2">Day 2: Hands-on Workshop</h3>
-                        <ul className="list-disc pl-5 text-gray-300 space-y-1">
+                        <h3 className="text-lg sm:text-xl font-semibold text-[#8b5cf6] mb-5">Day 2: Hands-on Workshop</h3>
+                        <ul className="list-disc pl-5 text-gray-300 space-y-2 text-left">
                             <li>Hands-on Qiskit workshops using real quantum devices</li>
                             <li>Collaboration & networking with peers and experts</li>
                         </ul>
@@ -323,10 +323,10 @@ function ScheduleSection() {
                 </Card>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-1 gap-6 mt-8">
-                <Card className="bg-gray-900/90 border-l-4 border-[#ff4e50] w-120">
+                <Card className="bg-gray-900/90 border-l-4 border-[#ff4e50] w-120 h-40">
                     <CardContent>
-                        <h3 className="text-lg sm:text-xl font-semibold text-[#ff4e50] mb-2">Assessment</h3>
-                        <ul className="list-disc pl-5 text-gray-300 space-y-1">
+                        <h3 className="text-lg sm:text-xl font-semibold text-[#ff4e50] mb-5">Assessment</h3>
+                        <ul className="list-disc pl-5 text-gray-300 space-y-5 text-left">
                             <li>Submission checklist and timeline.</li>
                             <li>Certificates from IBM Quantum for all participants</li>
                         </ul>
@@ -399,7 +399,6 @@ function SpeakersSection() {
                 </Card>
               ))}
             </div>
-
         </section>
     );
 }

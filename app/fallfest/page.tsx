@@ -340,7 +340,7 @@ function ScheduleSection() {
 function SpeakersSection() {
     const speakers = [
   {
-    name: "Qiskit 101: Fundamentals of Quantum Mechanics",
+    name: "Qiskit 101: Basics of Quantum Mechanics",
     role: "Ms. Kavitha Yogaraj",
     desc: "Senior Quantum Computational Scientist, IBM Quantum | Qiskit Advocate",
     img: "/assets/fallfest/Cat_01.png",
@@ -368,26 +368,38 @@ function SpeakersSection() {
             style={anchorOffsetStyle}
             className="relative flex flex-col items-center text-center px-6 py-12">
             <SectionHeading title="Speakers & Mentors"/>
-            <div className="grid sm:grid-cols-3 gap-8">
-                {speakers.map(({name, role, desc, img, bio}, i) => (
-                    <Card
-                        key={i}
-                        className="bg-gray-900/80 p-6 flex flex-col items-center text-center rounded-lg hover:shadow-lg transition-shadow"
-                    >
-                        <img
-                            src={img}
-                            alt={name}
-                            className="w-20 h-20 sm:w-24 sm:h-24 rounded-full border-4 border-[#40c0cb] mb-3 sm:mb-4 object-cover block"
-                            loading="lazy"
-                            decoding="async"
-                        />
-                        <h3 className="text-white font-bold text-lg sm:text-xl">{name}</h3>
-                        <span className="text-[#8b5cf6] font-semibold h-1">{role}</span>
-                        <span className="text-[#8b5cf6] font-semibold text-sm">{desc}</span>
-                        <p className="text-gray-300 mt-3">{bio}</p>
-                    </Card>
-                ))}
+            <div className="grid sm:grid-cols-3 gap-8 auto-rows-fr">
+              {speakers.map(({ name, role, desc, img, bio }, i) => (
+                <Card
+                  key={i}
+                  className="bg-gray-900/80 p-6 rounded-lg hover:shadow-lg transition-shadow h-full"
+                >
+                  <div className="flex flex-col items-center text-center h-full justify-between">
+                    <div className="flex flex-col items-center">
+                      <img
+                        src={img}
+                        alt={name}
+                        className="w-20 h-20 sm:w-24 sm:h-24 rounded-full border-4 border-[#40c0cb] mb-3 sm:mb-4 object-cover block"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      <h3 className="text-white font-bold text-lg sm:text-xl">{name}</h3>
+
+                      <div className="flex flex-col items-center mt-2">
+                        <span className="text-[#8b5cf6] font-semibold">{role}</span>
+                        {desc && (
+                          <span className="text-[#8b5cf6] font-medium text-sm mt-1">
+                            {desc}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                    <p className="text-gray-300 mt-4 max-w-[85%]">{bio}</p>
+                  </div>
+                </Card>
+              ))}
             </div>
+
         </section>
     );
 }

@@ -61,9 +61,7 @@ export default function HeroSection() {
           </p>
           
           <div className="flex flex-wrap gap-4">
-            <Button asChild className="bg-blue-600 hover:bg-blue-900 text-white font-display text-sm md:text-lg px-8 py-6 h-auto rounded-md shadow-lg shadow-blue-900/20">
-              <Link href="/join">Join Us</Link>
-            </Button>
+
             
             <Button asChild variant="outline" className="border-blue-700/50 text-blue-300 hover:bg-blue-900/30 font-display text-sm md:text-lg px-8 py-6 h-auto rounded-md">
               <Link href="/about">Learn More</Link>

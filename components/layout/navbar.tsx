@@ -106,7 +106,7 @@ export default function Navbar() {
                 </Link>
               )
             ))}
-            <Button className="bg-blue-800 text-white hover:bg-blue-600 font-display">Join Us</Button>
+
           </nav>
 
           {/* Mobile navigation */}

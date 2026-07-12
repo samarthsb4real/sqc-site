@@ -88,8 +88,10 @@ export default function Home() {
                   <h3 className="font-title text-base font-semibold">Resources</h3>
                 </div>
                 <p className="font-display text-gray-300 mb-3 text-sm leading-relaxed">Access our curated collection of quantum resources</p>
-                <Button variant="link" className="text-blue-400 p-0 font-display text-sm">
-                  Browse Library →
+                <Button variant="link" asChild className="text-blue-400 p-0 font-display text-sm">
+                  <a href="https://github.com/Symbiosis-Quantum-Club/quantum-computing-resources" target="_blank" rel="noopener noreferrer">
+                    Browse Library →
+                  </a>
                 </Button>
               </CardBody>
             </Card>
@@ -135,8 +137,10 @@ export default function Home() {
             <CardBody className="p-8">
               <h3 className="font-title text-xl font-semibold mb-3">Resources</h3>
               <p className="font-display text-gray-300 mb-6 text-base leading-relaxed">Access our curated collection of quantum resources</p>
-              <Button variant="link" className="text-blue-400 p-0 font-display text-base">
-                Browse Library →
+              <Button variant="link" asChild className="text-blue-400 p-0 font-display text-base">
+                <a href="https://github.com/Symbiosis-Quantum-Club/quantum-computing-resources" target="_blank" rel="noopener noreferrer">
+                  Browse Library →
+                </a>
               </Button>
             </CardBody>
           </Card>

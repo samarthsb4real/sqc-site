@@ -26,7 +26,7 @@ export default function Navbar() {
   }, []);
 
   const navItems = [
-    { name: "FallFest", href: "/fallfest" },
+    { name: "Events", href: "/events" },
     { name: "ChatBot", href: "/chatbot" },
     { name: "Team", href: "/team" },
     { name: "Mission", href: "/mission" },
@@ -88,7 +88,7 @@ export default function Navbar() {
           {/* Desktop navigation */}
           <nav className="hidden md:flex items-center gap-6 lg:gap-8">
             {navItems.map((item) => (
-              item.name === "FallFest" ? (
+              item.name === "Events" ? (
                 <span key={item.name} className="fallfest-gradient-border">
                   <Link href={item.href} className="fallfest-inner">
                     <span className="fallfest-gradient-text font-display text-sm">{item.name}</span>
@@ -138,7 +138,7 @@ export default function Navbar() {
               <nav className="flex flex-col mt-1 gap-2 p-2">
                 {navItems.map((item) => (
                   <SheetClose asChild key={item.name}>
-                    {item.name === "FallFest" ? (
+                    {item.name === "Events" ? (
                       <span className="fallfest-gradient-border">
                         <Link href={item.href} className="fallfest-inner">
                           <span className="fallfest-gradient-text font-display text-base">{item.name}</span>
@@ -155,7 +155,7 @@ export default function Navbar() {
                       >
                         <SheetTitle
                           className={
-                            item.name === "FallFest"
+                            item.name === "Events"
                               ? "text-yellow-400 hover:text-yellow-300 blink-animation fallfest-hover-bg"
                               : "text-gray-300 hover:text-gray-100"
                           }

@@ -4,8 +4,8 @@ import FadeInOnScroll from "@/components/sections/FadeInOnScroll";
 import HeroSection from "@/components/sections/hero-section";
 import { Button } from "@/components/ui/button";
 import SectionHeading from "@/components/ui/section-heading";
-// import { Card, CardBody } from "@/components/ui/card";
 import { Card, CardBody } from "@heroui/react";
+// import { Card, CardBody } from "@heroui/react";
 import Link from "next/link";
 
 export default function Home() {
@@ -88,8 +88,10 @@ export default function Home() {
                   <h3 className="font-title text-base font-semibold">Resources</h3>
                 </div>
                 <p className="font-display text-gray-300 mb-3 text-sm leading-relaxed">Access our curated collection of quantum resources</p>
-                <Button variant="link" className="text-blue-400 p-0 font-display text-sm">
-                  Browse Library →
+                <Button variant="link" asChild className="text-blue-400 p-0 font-display text-sm">
+                  <a href="https://github.com/Symbiosis-Quantum-Club/quantum-computing-resources" target="_blank" rel="noopener noreferrer">
+                    Browse Library →
+                  </a>
                 </Button>
               </CardBody>
             </Card>
@@ -135,8 +137,10 @@ export default function Home() {
             <CardBody className="p-8">
               <h3 className="font-title text-xl font-semibold mb-3">Resources</h3>
               <p className="font-display text-gray-300 mb-6 text-base leading-relaxed">Access our curated collection of quantum resources</p>
-              <Button variant="link" className="text-blue-400 p-0 font-display text-base">
-                Browse Library →
+              <Button variant="link" asChild className="text-blue-400 p-0 font-display text-base">
+                <a href="https://github.com/Symbiosis-Quantum-Club/quantum-computing-resources" target="_blank" rel="noopener noreferrer">
+                  Browse Library →
+                </a>
               </Button>
             </CardBody>
           </Card>
@@ -165,9 +169,7 @@ export default function Home() {
           <p className="font-display text-sm sm:text-base md:text-xl mb-5 md:mb-6 max-w-2xl mx-auto text-gray-300">
             Connect with fellow quantum enthusiasts, participate in events, and stay updated.
           </p>
-          <Button className="bg-blue-600 hover:bg-blue-700 font-display mx-120 px-2 py-2.5 sm:px-8 sm:py-4 h-auto text-sm sm:text-base">
-            Join Now
-          </Button>
+
         </CardBody>
       </Card>
 </FadeInOnScroll>

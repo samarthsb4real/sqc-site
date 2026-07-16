@@ -26,7 +26,7 @@ export default function Navbar() {
   }, []);
 
   const navItems = [
-    { name: "FallFest", href: "/fallfest" },
+    { name: "Events", href: "/events" },
     { name: "ChatBot", href: "/chatbot" },
     { name: "Team", href: "/team" },
     { name: "Mission", href: "/mission" },
@@ -35,43 +35,6 @@ export default function Navbar() {
 
   return (
     <>
-      <style>
-        {`
-          @keyframes gradient-move {
-            0% { background-position: 0% 50%; }
-            100% { background-position: 200% 50%; }
-          }
-          .fallfest-gradient-border {
-            background: linear-gradient(270deg, #00f0ff, #7c3aed, #e600ffff, #00f0ff 90%);
-            background-size: 400% 400%;
-            animation: gradient-move 3.5s linear infinite;
-            border-radius: 9999px;
-            padding: 2.5px;
-            display: inline-block;
-            box-shadow: 0 0 8px 2px #7c3aed55, 0 0 16px 4px #00f0ff33;
-          }
-          .fallfest-inner {
-            background: #030618;
-            border-radius: 9999px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0.25rem 1.1rem;
-            min-width: 80px;
-          }
-          .fallfest-gradient-text {
-            background: linear-gradient(270deg, #00f0ff, #7c3aed, #e600ffff, #00f0ff 90%);
-            background-size: 400% 400%;
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            -webkit-text-fill-color: transparent;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            animation: gradient-move 3.5s linear infinite;
-          }
-        `}
-      </style>
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${
           isScrolled ? "bg-[#030618]/90 backdrop-blur-sm border-b border-gray-800/50" : ""
@@ -88,25 +51,16 @@ export default function Navbar() {
           {/* Desktop navigation */}
           <nav className="hidden md:flex items-center gap-6 lg:gap-8">
             {navItems.map((item) => (
-              item.name === "FallFest" ? (
-                <span key={item.name} className="fallfest-gradient-border">
-                  <Link href={item.href} className="fallfest-inner">
-                    <span className="fallfest-gradient-text font-display text-sm">{item.name}</span>
-                  </Link>
-                </span>
-              ) : (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className={`text-sm font-display transition-colors px-2 py-1 ${
-                    pathname === item.href ? "text-red font-medium" : "text-white"
-                  }`}
-                >
-                  {item.name}
-                </Link>
-              )
+              <Link
+                key={item.name}
+                href={item.href}
+                className={`text-sm font-display transition-colors px-2 py-1 ${
+                  pathname === item.href ? "text-red font-medium" : "text-white"
+                }`}
+              >
+                {item.name}
+              </Link>
             ))}
-            <Button className="bg-blue-800 text-white hover:bg-blue-600 font-display">Join Us</Button>
           </nav>
 
           {/* Mobile navigation */}
@@ -138,32 +92,18 @@ export default function Navbar() {
               <nav className="flex flex-col mt-1 gap-2 p-2">
                 {navItems.map((item) => (
                   <SheetClose asChild key={item.name}>
-                    {item.name === "FallFest" ? (
-                      <span className="fallfest-gradient-border">
-                        <Link href={item.href} className="fallfest-inner">
-                          <span className="fallfest-gradient-text font-display text-base">{item.name}</span>
-                        </Link>
-                      </span>
-                    ) : (
-                      <Link
-                        href={item.href}
-                        className={`py-1 px-4 text-base hover:text-gray-300 ${
-                          pathname === item.href
-                            ? "text-white font-medium border-l-2 border-blue-500"
-                            : "text-gray-300"
-                        }`}
-                      >
-                        <SheetTitle
-                          className={
-                            item.name === "FallFest"
-                              ? "text-yellow-400 hover:text-yellow-300 blink-animation fallfest-hover-bg"
-                              : "text-gray-300 hover:text-gray-100"
-                          }
-                        >
-                          {item.name}
-                        </SheetTitle>
-                      </Link>
-                    )}
+                    <Link
+                      href={item.href}
+                      className={`py-1 px-4 text-base hover:text-gray-300 ${
+                        pathname === item.href
+                          ? "text-white font-medium border-l-2 border-blue-500"
+                          : "text-gray-300"
+                      }`}
+                    >
+                      <SheetTitle className="text-gray-300 hover:text-gray-100">
+                        {item.name}
+                      </SheetTitle>
+                    </Link>
                   </SheetClose>
                 ))}
               </nav>

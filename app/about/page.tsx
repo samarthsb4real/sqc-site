@@ -54,7 +54,7 @@ export default function About() {
         
         <Card className="bg-gray-900/50 border-gray-800">
           <CardContent className="p-8">
-            <h3 className="text-xl font-bold mb-4 text-blue-400">Join Us</h3>
+            <h3 className="text-xl font-bold mb-4 text-blue-400">Membership Benefits</h3>
             <p className="mb-4">
               We welcome students from all academic backgrounds who are interested in quantum 
               computing. No prior experience is required - just curiosity and enthusiasm!

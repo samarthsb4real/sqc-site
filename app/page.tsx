@@ -164,7 +164,7 @@ export default function Home() {
       <FadeInOnScroll className="snap-center min-w-[80vw] sm:min-w-[280px]">
 <Card className="py-8 md:py-16 container mx-auto px-4 sm:px-6 mb-4 md:mb-0">
         
-        <SectionHeading title="Join Our Community" className="mb-8 md:mb-12" />        
+        <SectionHeading title="Our Community" className="mb-8 md:mb-12" />        
         <CardBody className="bg-[#060A2C] rounded-xl p-5 sm:p-8 md:p-12 text-center shadow-lg">
           <p className="font-display text-sm sm:text-base md:text-xl mb-5 md:mb-6 max-w-2xl mx-auto text-gray-300">
             Connect with fellow quantum enthusiasts, participate in events, and stay updated.
